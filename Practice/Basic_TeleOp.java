@@ -1,10 +1,10 @@
 /*
  * Define a TeleOp that contains:
  * 
- * Move a DCMotor named "Leg" at 0.5 speed for 2 seconds
- * Set a CRServo named "Ankle"'s power to 1 for 1 second
- * Set a Servo named "Big Toe"'s position
- * Set a Servo named "Little Toe"'s position
+ * Set a Servo named "Little Toe"'s position at the start of the runtime before the while loop
+ * Move a DCMotor named "Leg" at the speed of the right trigger's inpus (this means set it's setpower to the inputs value)
+ * Set a CRServo named "Ankle"'s power to 1 during the whole runtime
+ * Set a Servo named "Big Toe"'s position when the b button is pressed
  */
 
 (file="Basic_TeleOp", group="TeleOp")
