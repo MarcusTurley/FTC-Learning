@@ -16,4 +16,10 @@ public class Hardware extends LinearOpMode {
 	
 	// We can do the same for Servos (are small mechines that can rotate to setPositions however have a set amount of power
   Servos humanAnkle;
+	
+	//This will be called inside of Basic_Hardware and Basic_TeleOp
+	
+	protected void initialize() {
+		
+	}
 }
