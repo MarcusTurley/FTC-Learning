@@ -16,8 +16,8 @@ public class Hardware extends LinearOpMode {
   DCMotor legLeft; //@Description	This creates a new DCMotor object called legLeft
 	
 	// We can do the same for Servos (are small mechines that can rotate to setPositions however have a set amount of power
-  Servos ankleRight;	//@Description	This creates a new Servo object called ankleRight
-  Servos ankleLeft;	//@Description	This creates a new Servo object called ankleLeft
+	Servos ankleRight;	//@Description	This creates a new Servo object called ankleRight
+	Servos ankleLeft;	//@Description	This creates a new Servo object called ankleLeft
 	
 	//This will be called inside of Basic_TeleOp inside the runOpMode method
 	protected void initialize() {
