@@ -23,11 +23,30 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 		while (opModeIsActive() && !isStopRequested()) {
 			//We input the gamepad that we are using along with the input we wish to output by using gamepad[#number].[input]
 			MoveArms(gamepad1.left_stick_x, gamepad1.right_stick_x, gamepad1.left_stick_y, gamepad1.right_stick_y);
+			MoveClamps(gamepad1.a, gamepad1.b, gamepad1.x, gamepad1.y);
+			MoveClaws(gamepad1.right_trigger, gamepad1.left_trigger);
 		}
 	}
 	
-	private void moveArms(double leftForward, double leftHoricontal,double rightForward,, double righHorizontal) {
+	private void MoveArms(double leftForward, double leftHoricontal,double rightForward,, double righHorizontal) {
 		ArmLeft.setPower(leftForward + leftHoricontal);
 		ArmLeft.setPower(rightForward + righHorizontal);
+	}
+	
+	private void MoveClamps(boolean position1, boolean position2) {
+		if(position1){
+			ClampRight.setPosition(1);
+			ClampLeft.setPosition(1);
+		}
+		
+		if(position2) {
+			ClampRight.setPosition(-1);
+			ClampLeft.setPosition(-1);
+		}
+	}
+	
+	private void MoveClaws(double leftMove, double rightMove) {
+		ClawRight.setPower(leftMove);
+		ClawLeft.setPower(righMovet);
 	}
 }
