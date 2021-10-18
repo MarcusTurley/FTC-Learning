@@ -18,7 +18,7 @@ public class Hardware extends LinearOpMode {
 	Servos ankleRight;	//@Description This creates a new Servo object called ankleRight
 	Servos ankleLeft;	//@Description This creates a new Servo object called ankleLeft
 	
-	//This will be called inside of Basic_TeleOp inside the runOpMode method
+	//This will be called inside of Basic_RunMode_TeleOp inside the runOpMode method
 	protected void initialize() {
 		//This is where we refrence the names from the phone configuration so that the Control Hub can assign the objects to it.
 		legRight = hardwareMap.get(DcMotor.class, "RightLeg");	//@Description This assigns the ankleRight to rightAnkle
