@@ -33,8 +33,11 @@ public class Hardware extends LinearOpMode {
 		ArmRight = hardwareMap.get(DcMotor.class, "RightArm");	//@Description This assigns the ArmRight to RightArm
 		ArmLeft = hardwareMap.get(DcMotor.class, "LeftArm");	//@Description This assigns the ArmLeft to LeftArm
 		
+		//This sets the direction of the motors based on the motor's structure
 		ArmRight.setDirection(DcMotorSimple.Direction.FORWARD);
 		ArmLeft.setDirection(DcMotorSimple.Direction.FORWARD);
+		
+		//We can follow these same steps for the  rest of the objects witha few slight changes (mainly class reference name changes).
 		
 		ClampRight = hardwareMap.get(Servo.class, "RightClamp");	//@Description This assigns the ClampRight to RightClamp
 		ClampLeft = hardwareMap.get(Servo.class, "LeftClamp");	//@Description This assigns the ClampLeft to LeftClamp
