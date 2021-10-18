@@ -23,10 +23,11 @@ public class Hardware extends LinearOpMode {
 	protected void initialize() {
 		
 		//This is where we refrence the names from the phone configuration so that the Control Hub can assign the objects to it.
-		ankleRight = hardwareMap.get(DcMotor.class, "rightAnkle"); //@Description This assigns the ankleRight to rightAnkle
-		ankleLeft = hardwareMap.get(DcMotor.class, "leftAnkle"); //@Description This assigns the ankleRight to leftAnkle
+		legRight = hardwareMap.get(DcMotor.class, "RightLeg"); //@Description This assigns the ankleRight to rightAnkle
+		legLeft = hardwareMap.get(DcMotor.class, "LeftLeg"); //@Description This assigns the ankleRight to leftAnkle
 		
-		humanAnkleLeft = hardwareMap.get(Servo.class, "FrontLeft"); //@Description This assigns the ankleRight to rightAnkle
+		ankleRight = hardwareMap.get(Servo.class, "RightAnkle"); //@Description This assigns the ankleRight to rightAnkle
+		ankleLeft = hardwareMap.get(Servo.class, "LeftAnkle"); //@Description This assigns the ankleRight to rightAnkle
 	}
 	
 	//Note we do not call runOpMode inside of this class, instead we call.
