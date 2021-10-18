@@ -12,22 +12,22 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 	//This overrides the runOpMode method from the LinearOpMode class and when the program is exicuted
 	@Override
 	public void runOpMode() {
-		TeleOp();	//@Description We call the initialize from the Basic_Hardware class
+		//We call the initialize from the Basic_Hardware class
+		Basic_Hardware.initialize();
 
 		//This will wait for the run button to be pressed and continue compilation
 		waitForStart();	//@Description This is called from LinearOpMode
-		
-		initialize();	//Refrences initialize from Basic_Hardware and calls it
     
 		//This will keep looping for the entirety of runtime so that the inputs can be read constantly
 		//This also checks to see if the program has been forced stop to stop the while loop to prevent an error
 		while (opModeIsActive() && !isStopRequested()) {
-			Basic_Hardware.initialize();	//@Description We call the initialize from the Basic_Hardware class
-			Move(gamepad1.LeftStr);
+			//We input the gamepad that we are using along with the input we wish to output by using gamepad[#number].[input]
+			MoveArms(gamepad1.left_stick_x, gamepad1.right_stick_x, gamepad1.left_stick_y, gamepad1.right_stick_y);
 		}
 	}
 	
-	private void move(double forward, double horizontal, double rotational) {
-		
+	private void moveArms(double leftForward, double leftHoricontal,double rightForward,, double righHorizontal) {
+		ArmLeft.setPower(leftForward + leftHoricontal);
+		ArmLeft.setPower(rightForward + righHorizontal);
 	}
 }
