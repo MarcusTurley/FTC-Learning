@@ -9,14 +9,14 @@ public class Hardware extends LinearOpMode {
 	//When you want to add something to your lego collection you must add something to your lego box.
 	
 	//Here is an example of how to define a motor.
-	DCMotor legRight;	//@Description	This creates a new DCMotor object called legRight
+	DCMotor legRight;	//@Description This creates a new DCMotor object called legRight
 	
 	//Here is another example.
-	DCMotor legLeft;	//@Description	This creates a new DCMotor object called legLeft
+	DCMotor legLeft;	//@Description This creates a new DCMotor object called legLeft
 	
 	// We can do the same for Servos (are small mechines that can rotate to setPositions however have a set amount of power
-	Servos ankleRight;	//@Description	This creates a new Servo object called ankleRight
-	Servos ankleLeft;	//@Description	This creates a new Servo object called ankleLeft
+	Servos ankleRight;	//@Description This creates a new Servo object called ankleRight
+	Servos ankleLeft;	//@Description This creates a new Servo object called ankleLeft
 	
 	//This will be called inside of Basic_TeleOp inside the runOpMode method
 	protected void initialize() {
