@@ -10,14 +10,14 @@ import org.firstinspires.ftc.teamcode.Lessons.Basic.Basic_Hardware.java;
 public class Basic_RunMode_TeleOp extends Basic_Hardware {
 	
 	//This overrides the runOpMode method from the LinearOpMode class and when the program is exicuted
-  @Override
+	@Override
 	public void runOpMode() {
 		TeleOp();	//@Description We call the initialize from the Basic_Hardware class
 
 		//This will wait for the run button to be pressed and continue compilation
 		waitForStart();	//@Description This is called from LinearOpMode
-    
-    initialize();	//Refrences initialize from Basic_Hardware and calls it
+		
+		initialize();	//Refrences initialize from Basic_Hardware and calls it
     
 		//This will keep looping for the entirety of runtime so that the inputs can be read constantly
 		//This also checks to see if the program has been forced stop to stop the while loop to prevent an error
@@ -26,3 +26,8 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 			Move(gamepad1.LeftStr);
 		}
 	}
+	
+	private void move(double forward, double horizontal, double rotational) {
+		
+	}
+}
