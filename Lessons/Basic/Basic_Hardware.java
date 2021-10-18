@@ -33,11 +33,20 @@ public class Hardware extends LinearOpMode {
 		ArmRight = hardwareMap.get(DcMotor.class, "RightArm");	//@Description This assigns the ArmRight to RightArm
 		ArmLeft = hardwareMap.get(DcMotor.class, "LeftArm");	//@Description This assigns the ArmLeft to LeftArm
 		
+		ArmRight.setDirection(DcMotorSimple.Direction.FORWARD);
+		ArmLeft.setDirection(DcMotorSimple.Direction.FORWARD);
+		
 		ClampRight = hardwareMap.get(Servo.class, "RightClamp");	//@Description This assigns the ClampRight to RightClamp
 		ClampLeft = hardwareMap.get(Servo.class, "LeftClamp");	//@Description This assigns the ClampLeft to LeftClamp
 		
-		RightClaw = hardwareMap.get(CRServo.class, "RightClaw");	//@Description This assigns the LeftClaw to RightClaw
-		LeftClaw = hardwareMap.get(CRServo.class, "LeftClaw");	//@Description This assigns the LeftClaw to LeftClaw
+		ClampRight.setDirection(Servo.Direction.FORWARD);
+		ClampLeft.setDirection(Servo.Direction.FORWARD);
+		
+		ClawRight = hardwareMap.get(CRServo.class, "RightClaw");	//@Description This assigns the LeftClaw to RightClaw
+		ClawLeft = hardwareMap.get(CRServo.class, "LeftClaw");	//@Description This assigns the LeftClaw to LeftClaw
+		
+		ClawRight.setDirection(CRServo.Direction.FORWARD);
+		ClawLeft.setDirection(CRServo.Direction.FORWARD);
 	}
 	
 	//Note we do not call runOpMode inside of this class, instead we call it inside of Basic_TeleOp and Basic_Autonomous. This was done si that 
