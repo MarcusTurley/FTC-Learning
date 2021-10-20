@@ -18,25 +18,30 @@ public class Basic_RunMode_Autonomous extends Basic_Hardware {
 		//This will wait for the run button to be pressed and continue compilation
 		waitForStart();	//@Description This is called from LinearOpMode
     
-    MoveArms(1, 1, 0.5, 0, 1000);
-    MoveClamps(1, 1);
-    MoveClaws(1, 1);
+		//Input the move code here. Note that the controllers will not be able to send inputs to the robot, however you may use sensors
+    		MoveArms(1, 1, 0.5, 0, 1000);
+   		MoveClamps(1, 1);
+    		MoveClaws(1, 1);
 	}
 	
+	
+	//Moves the arms based on the given inputs
 	private void MoveArms(double leftForward, double leftHoricontal,double rightForward,, double righHorizontal, double waitTime) {
 		ArmLeft.setPower(leftForward + leftHoricontal);
 		ArmLeft.setPower(rightForward + righHorizontal);
-    sleep(waitTime);
+    		sleep(waitTime);
 	}
 	
+	//Moves the clamps based on the given inputs
 	private void MoveClamps(boolean rightPosition, boolean leftPosition) {
 			ClampRight.setPosition(rightPosition);
 			ClampLeft.setPosition(leftPosition);
 	}
 	
+	//Moves the claws based on the given inputs
 	private void MoveClaws(double leftPower, double rightPower) {
 		ClawRight.setPower(leftPower);
 		ClawLeft.setPower(rightPower);
-    sleep(500);
+    		sleep(500);
 	}
 }
