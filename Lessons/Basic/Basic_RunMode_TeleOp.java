@@ -33,13 +33,13 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 		ArmLeft.setPower(rightForward + righHorizontal);
 	}
 	
-	private void MoveClamps(boolean position1, boolean position2) {
-		if(position1){
+	private void MoveClamps(boolean leftPower, boolean rightPower) {
+		if(leftPower){
 			ClampRight.setPosition(1);
 			ClampLeft.setPosition(1);
 		}
 		
-		if(position2) {
+		if(rightPower) {
 			ClampRight.setPosition(-1);
 			ClampLeft.setPosition(-1);
 		}
