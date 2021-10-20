@@ -28,23 +28,29 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 		}
 	}
 	
-	private void MoveArms(double leftForward, double leftHoricontal,double rightForward,, double righHorizontal) {
-		ArmLeft.setPower(leftForward + leftHoricontal);
+	
+	//Moves the motors based on the given inputs
+	private void MoveArms(double leftForward, double leftHorizontal, double rightForward, double righHorizontal) {
+		ArmLeft.setPower(leftForward + leftHorizontal);
 		ArmLeft.setPower(rightForward + righHorizontal);
 	}
 	
+	//Moves the clamps based on the given inputs
 	private void MoveClamps(boolean leftPower, boolean rightPower) {
-		if(leftPower){
+		
+		if ((leftPower && rightPower)|| !(leftPower || rightPower)) { //Checks if both variables are the same
+			ClampRight.setPosition(0);
+			ClampLeft.setPosition(0);
+		} else if(leftPower){ //Checks if the servos should move left
 			ClampRight.setPosition(1);
 			ClampLeft.setPosition(1);
-		}
-		
-		if(rightPower) {
+		} else if(rightPower) { //Checks if servos should move right
 			ClampRight.setPosition(-1);
 			ClampLeft.setPosition(-1);
 		}
 	}
 	
+	//Moves the claws
 	private void MoveClaws(double leftMove, double rightMove) {
 		ClawRight.setPower(leftMove);
 		ClawLeft.setPower(righMovet);
