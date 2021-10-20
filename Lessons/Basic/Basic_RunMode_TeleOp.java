@@ -1,9 +1,12 @@
 //@Note It is recemmended that you read Basic_Hardware before viewing this class
 
-package org.firstinspires.ftc.teamcode.Lessons.Basic.Basic_RunMode_TeleOp.java;
-
 //This is the import for Basic_Hardware
-import org.firstinspires.ftc.teamcode.Lessons.Basic.Basic_Hardware.java;
+//This contains the folder the porogram is found in within in the Android Studio project and must be inside program; typically it is above all the other code.
+package org.firstinspires.ftc.teamcode.Lessons.Basic.Basic_Runmode_TeleOp.java;
+
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+import org.firstinspires.ftc.teamcode.Lessons.Basic.Basic_Runmode_TeleOp.java.Basic_Hardware;
 
 @TeleOp(name= "RunMode: Basic_RunMode_TeleOp", group = "TeleOp")
 //We extend Basic_Hardware to be able to reference it's methods
@@ -13,7 +16,7 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 	@Override
 	public void runOpMode() {
 		//We call the initialize from the Basic_Hardware class
-		Basic_Hardware.initialize();
+		initialize();
 
 		//This will wait for the run button to be pressed and continue compilation
 		waitForStart();	//@Description This is called from LinearOpMode
@@ -23,7 +26,7 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 		while (opModeIsActive() && !isStopRequested()) {
 			//We input the gamepad that we are using along with the input we wish to output by using gamepad[#number].[input]
 			MoveArms(gamepad1.left_stick_x, gamepad1.right_stick_x, gamepad1.left_stick_y, gamepad1.right_stick_y);
-			MoveClamps(gamepad1.a, gamepad1.b, gamepad1.x, gamepad1.y);
+			MoveClamps(gamepad1.a, gamepad1.b);
 			MoveClaws(gamepad1.right_trigger, gamepad1.left_trigger);
 		}
 	}
@@ -53,6 +56,6 @@ public class Basic_RunMode_TeleOp extends Basic_Hardware {
 	//Moves the claws
 	private void MoveClaws(double leftMove, double rightMove) {
 		ClawRight.setPower(leftMove);
-		ClawLeft.setPower(righMovet);
+		ClawLeft.setPower(rightMove);
 	}
 }
